@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Produto;
 use App\Models\Componentes;
 
@@ -36,6 +37,8 @@ class ProdutosController extends Controller
             $componentes = new Componentes();
             $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
             Produto::create($data);
+
+            Toastr::success('Gravado com sucesso');
 
             return redirect()->route('produto.index');
         }

@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '44e4f8ded34f6a96c8d819402102dad6e0fd6995',
+        'reference' => 'a3cf4319e162418af37601f12e739deba0b9a636',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'brian2694/laravel-toastr' => array(
+            'pretty_version' => '5.59',
+            'version' => '5.59.0.0',
+            'reference' => '60f90a7b25973549c3992b3dc5965d4f0e27838c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brian2694/laravel-toastr',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.12.3',
             'version' => '0.12.3.0',
@@ -382,7 +391,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '44e4f8ded34f6a96c8d819402102dad6e0fd6995',
+            'reference' => 'a3cf4319e162418af37601f12e739deba0b9a636',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
