@@ -2,11 +2,11 @@
 
 return [
     'options' => [
-        "closeButton" => false,
-        "debug" => false,
+        "closeButton" => true,
+        "debug" => true,
         "newestOnTop" => false,
-        "progressBar" => false,
-        "positionClass" => "toast-top-right",
+        "progressBar" => true,
+        "positionClass" => "to ast-top-right",
         "preventDuplicates" => false,
         "onclick" => null,
         "showDuration" => "300",
