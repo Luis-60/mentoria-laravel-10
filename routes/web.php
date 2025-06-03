@@ -47,14 +47,10 @@ Route::prefix('clientes')->group(function () {
 
 Route::prefix('vendas')->group(function () {
     Route::get('/', [VendasController::class, 'index'])->name('vendas.index');
-    
+    //Cadastro Create
     Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
     Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
-    
-    Route::get('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'])->name('atualizar.venda');
-    Route::put('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'])->name('atualizar.venda');
-    
-    Route::delete('/delete', [VendasController::class, 'delete'])->name('venda.delete');
-    
+    Route::get('/enviaComprovantePorEmail/{id}', [VendasController::class, 'enviaComprovantePorEmail'])->name('enviaComprovantePorEmail.venda');
 });
+
 

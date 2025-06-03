@@ -15,7 +15,7 @@ class VendasSeeder extends Seeder
         Venda::create(
             [
                 'numero_da_venda' => 1,
-                'produto_id' => 5,
+                'produto_id' => 6,
                 'cliente_id' => 5,
             ]
         );

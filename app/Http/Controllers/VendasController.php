@@ -27,7 +27,7 @@ class VendasController extends Controller
     }
 
 
-    public function cadastrarVendas(FormRequestVenda $request)
+    public function cadastrarVenda(FormRequestVenda $request)
     {
         $findNumeracao = Venda::max('numero_da_venda') + 1;
         $findProduto =  Produto::all();
