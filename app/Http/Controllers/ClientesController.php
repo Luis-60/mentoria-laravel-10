@@ -54,10 +54,10 @@ class ClientesController extends Controller
             $buscaRegistro = Cliente::find($id);
             $buscaRegistro->update($data);
 
-            return redirect()->route('cliente.index');
+            return redirect()->route('clientes.index');
         }
 
-        $findcliente = Cliente::where('id', '=', $id)->first();
+        $findCliente = Cliente::where('id', '=', $id)->first();
         return view('pages.clientes.atualiza', compact('findCliente'));
     }
     

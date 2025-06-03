@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\VendasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +42,19 @@ Route::prefix('clientes')->group(function () {
     Route::put('/atualizarCliente/{id}', [ClientesController::class, 'atualizarCliente'])->name('atualizar.cliente');
     
     Route::delete('/delete', [ClientesController::class, 'delete'])->name('cliente.delete');
+    
+});
+
+Route::prefix('vendas')->group(function () {
+    Route::get('/', [VendasController::class, 'index'])->name('vendas.index');
+    
+    Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
+    Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
+    
+    Route::get('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'])->name('atualizar.venda');
+    Route::put('/atualizarVenda/{id}', [VendasController::class, 'atualizarVenda'])->name('atualizar.venda');
+    
+    Route::delete('/delete', [VendasController::class, 'delete'])->name('venda.delete');
     
 });
 
