@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\VendasController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,12 @@ Route::get('/', function() {
     return view('index');
 });
 
-Route::prefix('produtos')->group(function () {
+
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('produto.index');
+});
+    Route::prefix('produtos')->group(function () {
     Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');
     
     Route::get('/cadastrarProduto', [ProdutosController::class, 'cadastrarProduto'])->name('cadastrar.produto');
@@ -51,6 +57,24 @@ Route::prefix('vendas')->group(function () {
     Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
     Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
     Route::get('/enviaComprovantePorEmail/{id}', [VendasController::class, 'enviaComprovantePorEmail'])->name('enviaComprovantePorEmail.venda');
+});
+
+Route::prefix('vendas')->group(function () {
+    Route::get('/', [VendasController::class, 'index'])->name('vendas.index');
+    //Cadastro Create
+    Route::get('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
+    Route::post('/cadastrarVenda', [VendasController::class, 'cadastrarVenda'])->name('cadastrar.venda');
+    Route::get('/enviaComprovantePorEmail/{id}', [VendasController::class, 'enviaComprovantePorEmail'])->name('enviaComprovantePorEmail.venda');
+});
+
+Route::prefix('usuario')->group(function () {
+    Route::get('/', [UsuarioController::class, 'index'])->name('usuario.index');
+    Route::get('/cadastrarUsuario', [UsuarioController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    Route::post('/cadastrarUsuario', [UsuarioController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    //Atualiza Update
+    Route::get('/atualizarUsuario/{id}', [UsuarioController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+    Route::put('/atualizarUsuario/{id}', [UsuarioController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+    Route::delete('/delete', [UsuarioController::class, 'delete'])->name('usuario.delete');
 });
 
 
